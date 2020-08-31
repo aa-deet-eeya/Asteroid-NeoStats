@@ -13,7 +13,10 @@ class Submit extends React.Component {
     };
   }
   componentDidUpdate(prevProp) {
-    if (prevProp.startDate !== this.props.startDate || prevProp.endDate !== this.props.endDate)
+    if (
+      prevProp.startDate !== this.props.startDate ||
+      prevProp.endDate !== this.props.endDate
+    )
       this.setState({ isLoading: true });
   }
   findStats = (obj) => {
@@ -53,7 +56,9 @@ class Submit extends React.Component {
           ? curr
           : prev;
       }),
-      averageDiameter: asteriods.reduce((prev,curr)=> prev + curr.diameter,0)/asteriods.length
+      averageDiameter:
+        asteriods.reduce((prev, curr) => prev + curr.diameter, 0) /
+        asteriods.length,
     };
   };
 
@@ -73,10 +78,21 @@ class Submit extends React.Component {
       .then((res) => res.data)
       .then((data) => {
         const dataSet = data.near_earth_objects;
-        const { fastest, maxDiameter, minDistance, averageDiameter } = this.findStats(dataSet);
+        const {
+          fastest,
+          maxDiameter,
+          minDistance,
+          averageDiameter,
+        } = this.findStats(dataSet);
         //console.log(fastest);
         //console.log(something);
-        this.setState({ fastest, maxDiameter, minDistance, averageDiameter ,isLoading: false });
+        this.setState({
+          fastest,
+          maxDiameter,
+          minDistance,
+          averageDiameter,
+          isLoading: false,
+        });
         //console.log(this.state);
       })
       .catch((err) => {
