@@ -16,10 +16,12 @@ Users can select the date in between they want to view the Asteroids
 ## Screenshots
 
 Main Page
+<br/>
 <img src="https://raw.githubusercontent.com/aa-deet-eeya/Asteroid-NeoStats/master/assets/MainPage.png" alt="MainPage.png" width="70%">
 <br/>
 
 Stats Modal
+<br/>
 <img src="https://raw.githubusercontent.com/aa-deet-eeya/Asteroid-NeoStats/master/assets/StatsModal.png" alt="StatModal.png" width="70%">
 
 ## Live Version 
