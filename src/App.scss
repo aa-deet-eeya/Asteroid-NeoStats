@@ -1,0 +1,105 @@
+body {
+  padding: 0px;
+  margin: 0px;
+}
+
+img {
+  max-height: 145px;
+}
+
+h2 {
+  padding: 10px;
+}
+.react-datepicker-wrapper {
+  margin: 0 0.5rem;
+  box-shadow: 2px 2px #515070;
+}
+
+.dates {
+  display: flex;
+  justify-content: center;
+}
+
+.startDate .endDate {
+  margin: auto;
+}
+
+.card-wrapper {
+  background: transparent;
+  border: 3px solid #515070;
+  box-shadow: 8px 8px #ff8e6e;
+  margin: 20px auto;
+  max-width: 900px;
+  min-width: 600px;
+  height: 400px;
+}
+
+.modal-content {
+  min-width: 90%;
+  min-height: 300px;
+}
+
+.statsDiv {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  margin: 10px;
+}
+
+.statsCard {
+  margin: 10px;
+  min-width: 30%;
+  font-size: small;
+  border: 2px solid #515070;
+  box-shadow: 4px 4px #ff8e6e;
+}
+
+.diameterInfo {
+  padding: 4px;
+  margin: 0px 30px 30px 30px;
+  border: 2px solid #515070;
+  border-radius: 4px;
+  box-shadow: 4px 4px #ff8e6e;
+}
+
+.submit {
+  width: auto;
+  padding: 1rem 2rem;
+  height: auto;
+  font-family: "Bangers", cursive;
+  font-weight: 700;
+  font-size: 2.5rem;
+  // text-shadow: 1px 2px #cfd8dc;
+  background: transparent;
+  border: 3px solid #515070;
+  box-shadow: 8px 8px #ff8e6e;
+  margin-top: 60px;
+  cursor: pointer;
+  transform: 2s ease;
+  &:active {
+    position: relative;
+    margin-top: 68px;
+    box-shadow: none;
+    text-shadow: none;
+  }
+}
+
+.loadingSpinner {
+  position: relative;
+  margin: auto;
+  border: 10px solid #f3f3f3; /* Light grey */
+  border-top: 10px solid #ffbb91; /* Blue */
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  animation: spin 1.5s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
