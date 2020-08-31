@@ -13,4 +13,15 @@ Users can select the date in between they want to view the Asteroids
 - Run ```npm install``` to install all the dependencies
 - And ```npm start``` to spin the app in your local machine
 
+## Screenshots
 
+Main Page
+<img src="https://raw.githubusercontent.com/aa-deet-eeya/Asteroid-NeoStats/master/assets/MainPage.png" alt="MainPage.png" width="70%">
+<br/>
+
+Stats Modal
+<img src="https://raw.githubusercontent.com/aa-deet-eeya/Asteroid-NeoStats/master/assets/StatsModal.png" alt="StatModal.png" width="70%">
+
+## Live Version 
+
+A live of version of the app is hosted on Heroku : https://asteroidsneostats.herokuapp.com/
