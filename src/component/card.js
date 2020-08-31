@@ -1,93 +1,34 @@
-import React from "react";
-import axios from "axios";
+import React from 'react'
+import closestPIC from '../assets/closest.jpg'
+import diameterPIC from '../assets/diameter.jpg'
+import fastestPIC from '../assets/fastest.png'
+
 class Card extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      fastest: null,
-      maxDiameter: null,
-      minDistance: null,
-      isLoading: true,
-    };
-  }
-  findStats = (obj) => {
-    let asteriods = [];
-    for (const dates of Object.entries(obj)) {
-      for (const asteroid of Object.entries(dates[1])) {
-        const kmps =
-          asteroid[1].close_approach_data[0].relative_velocity
-            .kilometers_per_hour;
-        const diameter =
-          (asteroid[1].estimated_diameter.kilometers.estimated_diameter_max +
-            asteroid[1].estimated_diameter.kilometers.estimated_diameter_min) /
-          2;
-        const distance =
-          asteroid[1].close_approach_data[0].miss_distance.kilometers;
-        asteriods.push({
-          _id: asteroid[1].id,
-          name: asteroid[1].name,
-          distance,
-          kmps,
-          diameter,
-        });
-      }
+    render(){
+        const {name, _id , distance, kmps, diameter} = this.props.asteroid
+        const {title} = this.props
+        let img
+        if(title === "Closest Asteroid"){
+            img = <img src={closestPIC} className="card-img-top" alt="something"/>
+        } else if(title === "Fastest Asteroid") {
+            img = <img src={fastestPIC} className="card-img-top" alt="something"/>
+        } else {
+            img = <img src={diameterPIC} className="card-img-top" alt="something"/>
+        }
+        return <div className="card statsCard" styles="width: 18rem;">
+         {img}   
+        <div className="card-body">
+          <h5 className="card-title">{title}</h5>
+        </div>
+        <ul className="list-group list-group-flush">
+        <li className="list-group-item">Asteroid ID : {_id}</li>
+          <li className="list-group-item">Name : {name}</li>
+          <li className="list-group-item">Closest Orbital Distance : {distance} kms</li>
+          <li className="list-group-item">Relative Velocity : {kmps} km/h</li>
+          <li className="list-group-item">Average Diameter : {diameter} kms</li>
+        </ul>
+      </div>
     }
-    //console.log(asteriods);
-    return {
-      fastest: asteriods.reduce((prev, curr) => {
-        return Math.round(prev.kmps) > Math.round(curr.kmps) ? prev : curr;
-      }),
-      maxDiameter: asteriods.reduce((prev, curr) => {
-        return Math.round(prev.diameter * 1000) >
-          Math.round(curr.diameter * 1000)
-          ? prev
-          : curr;
-      }),
-      minDistance: asteriods.reduce((prev, curr) => {
-        return Math.round(prev.distance) > Math.round(curr.distance)
-          ? curr
-          : prev;
-      }),
-    };
-  };
-
-  formatDate = (date) => {
-    return new Date(date.getTime() - date.getTimezoneOffset() * 60000)
-      .toISOString()
-      .split("T")[0];
-  };
-
-  onClickHandler = (e) => {
-    const startDate = this.formatDate(this.props.startDate);
-    const endDate = this.formatDate(this.props.endDate);
-    axios
-      .get(
-        `https://api.nasa.gov/neo/rest/v1/feed?start_date=${startDate}&end_date=${endDate}&detailed=true&api_key=DEMO_KEY`
-      )
-      .then((res) => res.data)
-      .then((data) => {
-        const dataSet = data.near_earth_objects;
-        const { fastest, maxDiameter, minDistance } = this.findStats(dataSet);
-        console.log(fastest);
-        //console.log(something);
-        this.setState({ fastest, maxDiameter, minDistance, isLoading: false });
-        //console.log(this.state);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
-  render() {
-    //console.log(this.formatDate(this.props.startDate))
-    //console.log(this.formatDate(this.props.endDate))
-    console.log(this.state);
-    return (
-      <>
-        <h1>Hello from Card?</h1>
-        <button onClick={this.onClickHandler}>Submit</button>
-      </>
-    );
-  }
 }
 
-export default Card;
+export default Card

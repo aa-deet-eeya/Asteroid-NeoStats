@@ -1,38 +1,138 @@
-.App {
-  text-align: center;
+body {
+  padding: 0px;
+  margin: 0px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+img {
+  max-height: 145px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h2 {
+  padding: 10px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.react-datepicker-wrapper {
+  margin: 0 0.5rem;
+  -webkit-box-shadow: 2px 2px #515070;
+          box-shadow: 2px 2px #515070;
+}
+
+.dates {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
-.App-link {
-  color: #61dafb;
+.startDate .endDate {
+  margin: auto;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.card-wrapper {
+  background: transparent;
+  border: 3px solid #515070;
+  -webkit-box-shadow: 8px 8px #ff8e6e;
+          box-shadow: 8px 8px #ff8e6e;
+  margin: 20px auto;
+  max-width: 900px;
+  min-width: 600px;
+  height: 400px;
+}
+
+.modal-content {
+  min-width: 90%;
+  min-height: 300px;
+}
+
+.statsDiv {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 10px;
+  margin: 10px;
+}
+
+.statsCard {
+  margin: 10px;
+  min-width: 30%;
+  font-size: small;
+  border: 2px solid #515070;
+  -webkit-box-shadow: 4px 4px #ff8e6e;
+          box-shadow: 4px 4px #ff8e6e;
+}
+
+.diameterInfo {
+  padding: 4px;
+  margin: 0px 30px 30px 30px;
+  border: 2px solid #515070;
+  border-radius: 4px;
+  -webkit-box-shadow: 4px 4px #ff8e6e;
+          box-shadow: 4px 4px #ff8e6e;
+}
+
+.submit {
+  width: auto;
+  padding: 1rem 2rem;
+  height: auto;
+  font-family: "Bangers", cursive;
+  font-weight: 700;
+  font-size: 2.5rem;
+  background: transparent;
+  border: 3px solid #515070;
+  -webkit-box-shadow: 8px 8px #ff8e6e;
+          box-shadow: 8px 8px #ff8e6e;
+  margin-top: 60px;
+  cursor: pointer;
+  -webkit-transform: 2s ease;
+          transform: 2s ease;
+}
+
+.submit:active {
+  position: relative;
+  margin-top: 68px;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  text-shadow: none;
+}
+
+.loadingSpinner {
+  position: relative;
+  margin: auto;
+  border: 10px solid #f3f3f3;
+  /* Light grey */
+  border-top: 10px solid #ffbb91;
+  /* Blue */
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  -webkit-animation: spin 1.5s linear infinite;
+          animation: spin 1.5s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
   }
-  to {
-    transform: rotate(360deg);
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
   }
 }
+
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+/*# sourceMappingURL=App.css.map */
